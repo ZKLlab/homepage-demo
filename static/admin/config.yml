@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: zkllab/homepage-demo
+  branch: main
 
 publish_mode: editorial_workflow
 
