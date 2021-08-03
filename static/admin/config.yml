@@ -1,25 +1,56 @@
 backend:
-  name: github
-  repo: zkllab/homepage-demo
-  branch: main
+  name: "github"
+  repo: "zkllab/homepage-demo"
+  branch: "main"
 
-publish_mode: editorial_workflow
-
-media_folder: static/img
-
-public_folder: /img
+publish_mode: "editorial_workflow"
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+locale: zh-Hans
 
 collections:
-  - name: posts
-    label: Post
-    folder: 'content/posts'
-    create: true
-    slug: 'index'
-    path: '{{title}}/index'
-    editor:
-      preview: false
+  - name: "event"
+    identifier_field: "title"
+    label: "Event 活动"
+    description: "发布 SHUOSC 活动预告和回顾"
+    folder: "content/event"
+    create: "true"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    path: "{{slug}}/index"
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: "Template"
+        name: "template"
+        widget: "hidden"
+        default: "EventPostTemplate"
+
+      - label: "活动标题"
+        name: "title"
+        widget: "string"
+
+      - label: "活动标签"
+        name: "tags"
+        widget: "list"
+
+      - label: "活动时间"
+        name: "time"
+        widget: "datetime"
+        default: ""
+        required: false
+
+      - label: "活动地点"
+        name: "position"
+        widget: "string"
+        required: false
+
+      - label: "活动描述"
+        name: "description"
+        widget: "string"
+
+      - label: "活动预告正文"
+        name: "notice"
+        widget: "markdown"
+
+      - label: "活动通讯稿正文"
+        name: "newsletter"
+        widget: "markdown"
+        required: false

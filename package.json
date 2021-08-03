@@ -1,12 +1,9 @@
 {
-  "name": "shuosc",
-  "version": "1.0.0",
+  "name": "shuosc-homepage",
+  "version": "2.0.0",
   "private": true,
   "description": "SHUOSC",
-  "author": "钟坤林",
-  "keywords": [
-    "gatsby"
-  ],
+  "author": "ZKLlab <zkl@zkllab.com>",
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -29,8 +26,10 @@
     "gatsby-plugin-react-helmet": "^4.10.0",
     "gatsby-plugin-sharp": "^3.10.2",
     "gatsby-source-filesystem": "^3.10.0",
+    "gatsby-transformer-remark": "^4.7.0",
     "gatsby-transformer-sharp": "^3.10.0",
-    "netlify-cms-app": "^2.15.28",
+    "netlify-cms-app": "^2.15.31",
+    "netlify-cms-locales": "^1.33.0",
     "postcss": "^8.3.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

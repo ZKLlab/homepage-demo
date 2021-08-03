@@ -1,9 +1,19 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
+    title: 'SHUOSC',
     siteUrl: 'https://zkllab.github.io/homepage-demo',
   },
   plugins: [
-    'gatsby-plugin-netlify-cms',
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: path.join(__dirname, 'src', 'cms', 'cms.js'),
+        publicPath: 'shuosc-admin',
+      },
+    },
     'gatsby-plugin-image',
     // {
     //   resolve: "gatsby-plugin-google-analytics",
@@ -21,6 +31,7 @@ module.exports = {
     'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-plugin-postcss',
+    'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
@@ -37,6 +48,14 @@ module.exports = {
         path: './src/pages/',
       },
       __key: 'pages',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: './content/posts/',
+      },
+      __key: 'posts',
     },
   ],
 };
