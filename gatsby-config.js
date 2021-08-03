@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'SHUOSC',
-    siteUrl: 'https://zkllab.github.io/homepage-demo',
+    siteUrl: 'https://elated-golick-d40912.netlify.app/',
   },
   plugins: [
     {
